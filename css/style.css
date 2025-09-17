@@ -13,7 +13,7 @@
 :root {
     --bg-color: #1f242d;
     --second-bg-color: #323946;
-    --main-color: #7cf03d;
+    --main-color: #E4A0B7;
     --white-color: #fff;
     --disabled-color: #fff3;
 }
@@ -53,11 +53,7 @@ header.active {
     }
 }
 
-.logo {
-    font-size: 3rem;
-    color: var(--white-color);
-    font-weight: 700;
-}
+
 
 nav a {
     font-size: 2rem;
@@ -154,6 +150,7 @@ section.active {
     display: inline-block;
     font-size: 3.2rem;
     margin-top: -1rem;
+    font-weight: 500;
 }
 
 .home-details h2 span{
@@ -161,8 +158,8 @@ section.active {
     display: inline-block;
     color: transparent;
     -webkit-text-stroke: .07rem var(--main-color);
-    animation: display-text 5s linear infinite;
-    animation-delay: calc(-1s * var(--i));
+    /* animation: display-text 1s linear infinite; */
+    animation-delay: calc(0s * var(--i));
 }
 
 @keyframes display-text {
@@ -293,12 +290,12 @@ section.active {
 }
 
 .home-img .img-box .img-item img {
-    position: absolute;
+    
     top: 3rem;
     display: block;
     width: 85%;
     object-fit: cover;
-    mix-blend-mode: lighten;
+    
 }
 
 /* service page css */
@@ -370,15 +367,10 @@ section.active {
 }
 
 .services-box h3 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin: .5rem 0 2rem;
     transition: .5s;
-}
-
-.services-box h3 {
-    font-size: 3rem;
-    margin: .5rem 0 2rem;
-    transition: .5s;
+    line-height: 30px;
 }
 
 .services-box:hover h3 {
@@ -403,7 +395,7 @@ section.active {
 }
 
 .resume-box p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .resume-box .desc {
@@ -466,7 +458,7 @@ section.active {
     background: var(--second-bg-color);
     border-radius: .8rem;
     padding: 3rem 2.5rem;
-    height: calc((45rem - 2rem) / 2);
+    height: calc((60rem - 2rem) / 2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -556,7 +548,7 @@ section.active {
 .resume-detail.about .resume-item p span {
     color: var(--white-color);
     margin-left: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
 }
 
 
@@ -612,10 +604,6 @@ section.active {
 
 .portfolio-box .live-github a:hover {
     color: var(--main-color);
-}
-
-.portfolio-box .live-github a:  first-child {
-    margin-right: 1.5rem;
 }
 
 .portfolio-box .live-github a:first-child i {
@@ -848,6 +836,18 @@ section.active {
         height: 35rem;
     }
 
+    @media only screen and (max-width:425px) {
+        .home-img .img-box .img-item img {
+            width: 70%;
+        }
+
+        .home-img .img-box {
+    width: 25rem !important;
+    height: 25rem !important;
+    margin-bottom: 20px;
+}
+    }
+
     .resume-container,
     .portfolio-container,
     .contact-container {
@@ -883,6 +883,9 @@ section.active {
     html {
         font-size: 50%;
     }
+    .resume-item.this-only {
+    height: calc((80rem - 2rem) / 2);
+}
 }
 
 @media screen and (max-width: 400px) {
@@ -911,3 +914,32 @@ section.active {
         font-size: 3.5rem;
     }
 }
+
+.portfolio-box .portfolio-img {
+  height: 200px;                /* Set a fixed height */
+  overflow: hidden;             /* Hide the overflow */
+  position: relative;
+}
+
+.portfolio-box .portfolio-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 6s linear;
+}
+
+.portfolio-box .portfolio-img:hover img {
+  transform: translateY(-50%);
+}
+
+@media only screen and (min-width:425px) {
+.home-details h1 {
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    margin-bottom: 15px;
+}
+
+.home-details p {
+    margin-top: 15px !important;
+}
+}
+
